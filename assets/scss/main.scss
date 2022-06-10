@@ -1,0 +1,50 @@
+// font family import from google
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap");
+
+// importing my custom variables
+@import "./abstracts/variables";
+
+// importing necessary bootstrap scss
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// importing my custom map amends 
+@import "./abstracts/map-amends";
+
+// importing my custom utilities
+@import "./utilities/bootstrap-api-utilities";
+
+
+// importing main bootstrap scss (needs to be at the bottom)
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+// CSS TO APPLY
+
+// animation
+.animation {
+  animation: slideIn 3s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// shadow
+.shadow {
+  -webkit-box-shadow: 5px 5px 15px 7px rgba(0, 0, 0, 0.83);
+  box-shadow: 5px 5px 15px 7px rgba(0, 0, 0, 0.83);
+}
+
+// adding width, shadow and animation to card component
+.card {
+  width: 50%;
+  @extend .shadow;
+  @extend .animation;
+}
